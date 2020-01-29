@@ -12,7 +12,7 @@ import (
 
 var (
 	// Log is the pointer for a logger engine
-	Log logrus.Logger
+	Log *logrus.Logger
 )
 
 // Debug to log
