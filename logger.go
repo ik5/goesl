@@ -17,25 +17,25 @@ var (
 
 // Debug to log
 func Debug(message string, args ...interface{}) {
-	Log.Debugf(message, args...)
+	Log.WithField("from", "goesl").Debugf(message, args...)
 }
 
 // Error to log
 func Error(message string, args ...interface{}) {
-	Log.Errorf(message, args...)
+	Log.WithField("from", "goesl").Errorf(message, args...)
 }
 
 // Notice is alias to info
 func Notice(message string, args ...interface{}) {
-	Log.Infof(message, args...)
+	Log.WithField("from", "goesl").Infof(message, args...)
 }
 
 // Info to log
 func Info(message string, args ...interface{}) {
-	Log.Infof(message, args...)
+	Log.WithField("from", "goesl").Infof(message, args...)
 }
 
 // Warning to log
 func Warning(message string, args ...interface{}) {
-	Log.Warningf(message, args...)
+	Log.WithField("from", "goesl").Warningf(message, args...)
 }
