@@ -18,7 +18,7 @@ import (
 	"time"
 )
 
-// Main connection against ESL - Gotta add more description here
+// SocketConnection is the main connection against ESL - Gotta add more description here
 type SocketConnection struct {
 	net.Conn
 	err chan error
@@ -175,7 +175,7 @@ func (c *SocketConnection) SendMsg(msg map[string]string, uuid, data string) (m 
 	}
 }
 
-// OriginatorAdd - Will return originator address known as net.RemoteAddr()
+// OriginatorAddr will return originator address known as net.RemoteAddr()
 // This will actually be a freeswitch address
 func (c *SocketConnection) OriginatorAddr() net.Addr {
 	return c.RemoteAddr()

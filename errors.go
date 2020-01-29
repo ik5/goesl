@@ -6,7 +6,8 @@
 
 package goesl
 
-var (
+// List of errors
+const (
 	EInvalidCommandProvided  = "Invalid command provided. Command cannot contain \\r and/or \\n. Provided command is: %s"
 	ECouldNotReadMIMEHeaders = "Error while reading MIME headers: %s"
 	EInvalidContentLength    = "Unable to get size of content-length: %s"

@@ -6,12 +6,12 @@
 
 package goesl
 
-// Set - Helper that you can use to execute SET application against active ESL session
+// ExecuteSet - Helper that you can use to execute SET application against active ESL session
 func (sc *SocketConnection) ExecuteSet(key string, value string, sync bool) (m *Message, err error) {
 	return sc.Execute("set", key+"="+value, sync)
 }
 
-// ExecuteHangup - Helper desgned to help with executing Answer against active ESL session
+// ExecuteAnswer - Helper desgned to help with executing Answer against active ESL session
 func (sc *SocketConnection) ExecuteAnswer(args string, sync bool) (m *Message, err error) {
 	return sc.Execute("answer", args, sync)
 }
@@ -25,7 +25,7 @@ func (sc *SocketConnection) ExecuteHangup(uuid string, args string, sync bool) (
 	return sc.Execute("hangup", args, sync)
 }
 
-// BgApi - Helper designed to attach api in front of the command so that you do not need to write it
+// Api - Helper designed to attach api in front of the command so that you do not need to write it
 func (sc *SocketConnection) Api(command string) error {
 	return sc.Send("api " + command)
 }

@@ -7,44 +7,35 @@
 package goesl
 
 import (
-	"os"
-
-	"github.com/op/go-logging"
+	"github.com/sirupsen/logrus"
 )
 
 var (
-	log = logging.MustGetLogger("goesl")
-
-	// Example format string. Everything except the message has a custom color
-	// which is dependent on the log level. Many fields have a custom output
-	// formatting too, eg. the time returns the hour down to the milli second.
-	format = logging.MustStringFormatter(
-		"%{color}%{time:15:04:05.000} %{shortfunc} ▶ %{level:.8s}%{color:reset} %{message}",
-	)
+	// Log is the pointer for a logger engine
+	Log logrus.Logger
 )
 
+// Debug to log
 func Debug(message string, args ...interface{}) {
-	log.Debugf(message, args...)
+	Log.Debugf(message, args...)
 }
 
+// Error to log
 func Error(message string, args ...interface{}) {
-	log.Errorf(message, args...)
+	Log.Errorf(message, args...)
 }
 
+// Notice is alias to info
 func Notice(message string, args ...interface{}) {
-	log.Noticef(message, args...)
+	Log.Infof(message, args...)
 }
 
+// Info to log
 func Info(message string, args ...interface{}) {
-	log.Infof(message, args...)
+	Log.Infof(message, args...)
 }
 
+// Warning to log
 func Warning(message string, args ...interface{}) {
-	log.Warningf(message, args...)
-}
-
-func init() {
-	backend := logging.NewLogBackend(os.Stderr, "", 0)
-	formatter := logging.NewBackendFormatter(backend, format)
-	logging.SetBackend(formatter)
+	Log.Warningf(message, args...)
 }

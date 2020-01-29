@@ -8,10 +8,11 @@ package examples
 
 import (
 	"fmt"
-	. "github.com/0x19/goesl"
 	"os"
 	"runtime"
 	"strings"
+
+	. "github.com/ik5/goesl"
 )
 
 var welcomeFile = "%s/media/welcome.wav"
