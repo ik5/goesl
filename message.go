@@ -17,6 +17,8 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+
+	"github.com/ik5/gostrutils"
 )
 
 // Message - Freeswitch Message that is received by GoESL. Message struct is here to help with parsing message
@@ -82,7 +84,7 @@ func (m *Message) Parse() error {
 
 	Debug("Got message content (type: %s). Searching if we can handle it ...", msgType)
 
-	if !StringInSlice(msgType, AvailableMessageTypes) {
+	if !gostrutils.IsStringInSlice(AvailableMessageTypes, msgType) {
 		return fmt.Errorf(EUnsupportedMessageType, msgType, AvailableMessageTypes)
 	}
 

@@ -9,9 +9,10 @@ package examples
 import (
 	"flag"
 	"fmt"
-	. "github.com/0x19/goesl"
 	"runtime"
 	"strings"
+
+	. "github.com/ik5/goesl"
 )
 
 var (
@@ -23,7 +24,6 @@ var (
 
 // Small client that will first make sure all events are returned as JSON and second, will originate
 func main() {
-
 	// Boost it as much as it can go ...
 	runtime.GOMAXPROCS(runtime.NumCPU())
 

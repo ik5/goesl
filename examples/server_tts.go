@@ -7,9 +7,10 @@
 package examples
 
 import (
-	. "github.com/0x19/goesl"
 	"runtime"
 	"strings"
+
+	. "github.com/ik5/goesl"
 )
 
 var (
