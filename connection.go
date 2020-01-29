@@ -52,6 +52,8 @@ func (c *SocketConnection) Send(cmd string) error {
 		return err
 	}
 
+	Debug("Sent cmd '%s' without errors", cmd)
+
 	return nil
 }
 
